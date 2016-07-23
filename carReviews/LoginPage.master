@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LoginPage.master.cs" Inherits="LoginPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/StyleSheet.css" />
+    <link rel="icon" href="~/Assets/Images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/Assets/Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Customisable metadata for each page using the template -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- HTML validation hack :( -->
+    <title></title>
+
+</head>
+
+
+<body>
+    <form id="MasterPageForm" runat="server">
+
+        <div id="container">
+
+            <div id="header">
+                <h1 class="floatLeft"><a href="~/Admin/Admin.aspx">G17 &gt;&gt; Car Reviews</a></h1>
+
+                <!-- displays status of user with link -->
+                <asp:LoginStatus
+                    runat="server"
+                    ID="LoginStatus"
+                    CssClass="floatRight link"
+                    LoginText="Login / Register"
+                    LogoutText="Log out"
+                    LogoutPageUrl="~/Default.aspx" />
+
+                <!-- displays Username used to log in -->
+                <div style="text-transform:lowercase;">
+                    <asp:LoginName
+                        ID="LoginName"
+                        runat="server"                
+                        FormatString="{0}"
+                        CssClass="floatRight" />
+               </div>
+            </div>
+
+
+            <div id="mainBlock">
+                <asp:ContentPlaceHolder ID="MainBlock" runat="server">
+                    <!-- Place your Content here -->
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div id="rightBlock">
+
+                <asp:ContentPlaceHolder ID="RightBlock" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div id="footer">
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %>&nbsp;CS40114/G17 &nbsp;&nbsp;&nbsp;<a href="http://www.ul.ie/" target="_blank">UL</a> | <a href="http://www.csis.ul.ie/" target="_blank">CSIS</a> | <a href="http://www.asp.net/" target="_blank">ASP.NET</a></p>
+                </footer>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

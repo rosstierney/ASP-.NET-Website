@@ -1,0 +1,31 @@
+.sliderwrapper {
+    position: relative; /*leave as is*/
+    overflow: hidden; /*leave as is*/
+    border-bottom: 6px solid #000;
+    width: 450px; /*width of featured content slider*/
+    height: 430px; /*height of featured content slider*/
+}
+
+
+
+    .sliderwrapper .contentdiv {
+        visibility: hidden; /*leave as is*/
+        position: static; /*leave as is*/
+        padding: 5px 0;
+        background: white;
+        width: 460px; /*width of content DIVs within slider. Slider's width (390+5+5=400) */
+        height: 100%;
+        filter: progid:DXImageTransform.Microsoft.alpha(opacity=100);
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+
+.pagination {
+    width: 442px;
+    padding: 5px 0;
+}
+
+    .pagination a {
+        color: #000;
+        font-weight: bold;
+    }
